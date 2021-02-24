@@ -72,7 +72,7 @@ jobs:
       - run:
           name: Link to cluster
           command: |
-            aws eks --region eu-west-2 update-kubeconfig --name my-capstone-cluster 
+            aws eks --region eu-west-2 update-kubeconfig --name conor-udacity 
             kubectl get svc
       
       - run:
