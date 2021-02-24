@@ -43,11 +43,11 @@ jobs:
       - run:
           name: Build & Publish new image
           command: |
-            docker build --tag capstone-test .
+            docker build --tag capstone-1 .
             docker image ls
             echo "${DOCKER_PWORD}" | docker login --username ${DOCKER_NAME} --password-stdin
-            docker image tag capstone-test ${DOCKER_NAME}/capstone-release
-            docker push ${DOCKER_NAME}/capstone-release
+            docker image tag capstone-test ${DOCKER_NAME}/capstone-1
+            docker push ${DOCKER_NAME}/capstone-1
             
   CDphase:
     docker:
