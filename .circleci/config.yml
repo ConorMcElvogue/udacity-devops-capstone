@@ -46,7 +46,7 @@ jobs:
             docker build --tag capstone-1 .
             docker image ls
             echo "${DOCKER_PWORD}" | docker login --username ${DOCKER_NAME} --password-stdin
-            docker image tag capstone-test ${DOCKER_NAME}/capstone-1
+            docker image tag capstone-1 ${DOCKER_NAME}/capstone-1
             docker push ${DOCKER_NAME}/capstone-1
             
   CDphase:
