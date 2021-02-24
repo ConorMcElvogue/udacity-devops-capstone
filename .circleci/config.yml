@@ -45,9 +45,9 @@ jobs:
           command: |
             docker build --tag capstone-test .
             docker image ls
-            docker login --username ${DOCKER_NAME} --password ${DOCKER_PWORD}
-            docker image tag capstone-test cmcelvogue/capstone-release
-            docker push ${DOCKER_ID}/capstone-release
+            echo "${DOCKER_PWORD}" | docker login --username ${DOCKER_NAME} --password-stdin
+            docker image tag capstone-test ${DOCKER_NAME}/capstone-release
+            docker push ${DOCKER_NAME}/capstone-release
             
   CDphase:
     docker:
